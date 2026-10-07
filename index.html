@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Happy Boyfriend Day | Natachi & Mores</title>
+    <title>Happy 3rd Mensive | Natachi & Mores</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -42,7 +42,6 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <style>
-        /* Custom Scrollbar hiding */
         ::-webkit-scrollbar { width: 0px; background: transparent; }
         html, body {
             background-color: #000000;
@@ -69,12 +68,6 @@
 
         .story-gradient {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .text-ig-gradient {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         /* Animations */
@@ -112,7 +105,7 @@
             100% { height: 18px; }
         }
 
-        /* Heart Pop Animation for Double Tap */
+        /* Heart Pop Animation */
         .heart-pop {
             position: absolute;
             top: 50%;
@@ -127,7 +120,7 @@
             opacity: 1;
         }
 
-        /* Memory Card Flip Animation */
+        /* Perspective Flip */
         .perspective-1000 { perspective: 1000px; }
         .transform-style-3d { transform-style: preserve-3d; }
         .backface-hidden { backface-visibility: hidden; }
@@ -141,11 +134,9 @@
     <!-- 1. PASSCODE LOCK SCREEN MODAL -->
     <div id="pinLockScreen" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-black/90 backdrop-blur-2xl transition-all duration-700">
         <div class="glass-card max-w-sm w-full rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl border border-white/10 relative overflow-hidden">
-            <!-- Decorative Glow -->
             <div class="absolute -top-12 -right-12 w-32 h-32 bg-pink-600/30 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-purple-600/30 rounded-full blur-3xl"></div>
 
-            <!-- Profile Avatar Preview -->
             <div class="relative mb-4">
                 <div class="w-20 h-20 rounded-full p-[3px] story-gradient animate-pulse-glow">
                     <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" alt="Natachi & Mores" class="w-full h-full object-cover rounded-full border-2 border-black">
@@ -155,10 +146,9 @@
                 </span>
             </div>
 
-            <h2 class="text-xl font-bold text-white mb-1">National Boyfriend Day ✨</h2>
+            <h2 class="text-xl font-bold text-white mb-1">Happy 3rd Mensive ✨</h2>
             <p class="text-xs text-gray-400 mb-6">Masukan Passcode Khusus Natachi 🤍</p>
 
-            <!-- PIN Dots Display -->
             <div id="pinDots" class="flex gap-4 mb-8">
                 <div class="dot w-4 h-4 rounded-full border-2 border-gray-600 transition-all duration-200"></div>
                 <div class="dot w-4 h-4 rounded-full border-2 border-gray-600 transition-all duration-200"></div>
@@ -166,10 +156,8 @@
                 <div class="dot w-4 h-4 rounded-full border-2 border-gray-600 transition-all duration-200"></div>
             </div>
 
-            <!-- Lock Status Message -->
             <p id="pinErrorMsg" class="text-xs text-pink-500 font-semibold h-4 mb-4 transition-opacity opacity-0">Kode salah, coba lagi ya sayang! 🥺</p>
 
-            <!-- Keypad Matrix -->
             <div class="grid grid-cols-3 gap-4 w-full max-w-[240px] mb-2">
                 <button onclick="pressPin('1')" class="keypad-btn w-16 h-16 rounded-full bg-white/5 hover:bg-white/15 active:scale-95 text-xl font-semibold transition-all flex items-center justify-center border border-white/5">1</button>
                 <button onclick="pressPin('2')" class="keypad-btn w-16 h-16 rounded-full bg-white/5 hover:bg-white/15 active:scale-95 text-xl font-semibold transition-all flex items-center justify-center border border-white/5">2</button>
@@ -196,23 +184,20 @@
         <header class="sticky top-0 z-40 glass-nav px-4 py-3 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <h1 class="font-insta text-3xl tracking-wide bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">Instagram</h1>
-                <span class="text-[10px] bg-pink-500/20 text-pink-400 border border-pink-500/30 px-2 py-0.5 rounded-full font-semibold">Boyfriend Edition</span>
+                <span class="text-[10px] bg-pink-500/20 text-pink-400 border border-pink-500/30 px-2 py-0.5 rounded-full font-semibold">3rd Mensive</span>
             </div>
             
             <div class="flex items-center gap-4 text-xl">
-                <!-- Lyrics Drawer Trigger -->
                 <button onclick="openLyricsDrawer()" class="text-gray-200 hover:text-pink-500 transition-colors" title="Lihat Lirik Lagu">
                     <i class="fa-solid fa-align-left text-sm"></i>
                 </button>
 
-                <!-- Direct Message Trigger -->
                 <button onclick="switchTab('dm')" class="relative text-gray-200 hover:text-pink-500 transition-colors">
                     <i class="fa-regular fa-paper-plane"></i>
                     <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-pink-500 rounded-full animate-ping"></span>
                     <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-pink-500 rounded-full"></span>
                 </button>
                 
-                <!-- Audio Mute/Unmute Button -->
                 <button id="soundToggleBtn" onclick="toggleAudio()" class="text-gray-200 hover:text-pink-500 transition-colors">
                     <i id="soundIcon" class="fa-solid fa-volume-high text-pink-500"></i>
                 </button>
@@ -222,7 +207,6 @@
         <!-- STORIES BAR -->
         <section class="py-3 px-2 border-b border-gray-800/80 bg-black/40 overflow-x-auto no-scrollbar">
             <div class="flex gap-3 px-2">
-                <!-- User Profile Story -->
                 <div class="flex flex-col items-center gap-1 min-w-[70px]">
                     <div class="relative w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600">
                         <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" class="w-full h-full object-cover rounded-full border-2 border-black">
@@ -231,12 +215,11 @@
                     <span class="text-[11px] text-gray-300 truncate w-16 text-center font-medium">mores_mxlls</span>
                 </div>
 
-                <!-- Story 1 - 7 Items -->
                 <div onclick="openStoryModal(0)" class="cursor-pointer flex flex-col items-center gap-1 min-w-[70px] group">
                     <div class="w-16 h-16 rounded-full p-[2.5px] story-gradient group-hover:scale-105 transition-transform">
                         <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" class="w-full h-full object-cover rounded-full border-2 border-black">
                     </div>
-                    <span class="text-[11px] text-gray-300 truncate w-16 text-center">My Boy 🤍</span>
+                    <span class="text-[11px] text-gray-300 truncate w-16 text-center">3 Month 💖</span>
                 </div>
 
                 <div onclick="openStoryModal(1)" class="cursor-pointer flex flex-col items-center gap-1 min-w-[70px] group">
@@ -295,14 +278,12 @@
 
             <!-- TAB 2: ARCADE GAMES HUB -->
             <section id="tab-games" class="tab-view hidden p-4 space-y-6">
-                <!-- Arcade Sub-Header -->
                 <div class="glass-card p-4 rounded-2xl border border-pink-500/20 text-center relative overflow-hidden">
                     <span class="text-xs font-bold text-pink-400 uppercase tracking-widest block mb-1">Natachi's Play Zone 🎮</span>
-                    <h2 class="text-lg font-bold text-white">Arcade Spesial Boyfriend Day</h2>
+                    <h2 class="text-lg font-bold text-white">Arcade Spesial 3rd Mensive</h2>
                     <p class="text-xs text-gray-400 mt-1">Mainkan game seru ini & dapatkan hadiah istimewa dari Mores!</p>
                 </div>
 
-                <!-- Games Selector Pills -->
                 <div class="flex gap-2 overflow-x-auto no-scrollbar py-1">
                     <button onclick="switchGameMode('memory')" id="btn-game-memory" class="game-pill-btn active px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg">
                         🧠 Memory Match
@@ -318,7 +299,7 @@
                     </button>
                 </div>
 
-                <!-- GAME 1: MEMORY MATCH CARD GAME -->
+                <!-- GAME 1: MEMORY MATCH -->
                 <div id="game-view-memory" class="game-container space-y-4">
                     <div class="flex justify-between items-center text-xs text-gray-400 px-1">
                         <span>Moves: <strong id="memoryMoves" class="text-white">0</strong></span>
@@ -331,7 +312,7 @@
                     </div>
                 </div>
 
-                <!-- GAME 2: LOVE CATCHER MINI CANVAS GAME -->
+                <!-- GAME 2: LOVE CATCHER -->
                 <div id="game-view-catcher" class="game-container hidden space-y-4">
                     <div class="glass-card p-3 rounded-2xl flex items-center justify-between text-xs">
                         <div>Score: <strong id="catcherScore" class="text-pink-400 text-sm">0</strong></div>
@@ -344,7 +325,6 @@
                     <div class="relative w-full aspect-[3/4] max-h-[380px] bg-gradient-to-b from-gray-950 to-purple-950/40 rounded-2xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <canvas id="catcherCanvas" class="w-full h-full"></canvas>
                         
-                        <!-- Overlay Start/Over Screen -->
                         <div id="catcherOverlay" class="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center space-y-3">
                             <i class="fa-solid fa-gamepad text-4xl text-pink-500"></i>
                             <h3 class="text-base font-bold text-white">Love Catcher Game</h3>
@@ -355,7 +335,6 @@
                         </div>
                     </div>
 
-                    <!-- Touch Controls for Mobile Catcher -->
                     <div class="flex justify-between items-center gap-4">
                         <button id="btnMoveLeft" class="flex-1 py-3 bg-gray-800/80 active:bg-pink-600 rounded-xl text-white font-bold text-lg border border-gray-700">
                             ◀ LEFT
@@ -366,7 +345,7 @@
                     </div>
                 </div>
 
-                <!-- GAME 3: TRIVIA QUIZ GAME -->
+                <!-- GAME 3: TRIVIA QUIZ -->
                 <div id="game-view-quiz" class="game-container hidden space-y-4">
                     <div id="quizBox" class="glass-card p-5 rounded-2xl border border-white/10 space-y-4">
                         <div class="flex items-center justify-between text-xs text-gray-400">
@@ -384,19 +363,18 @@
                     </div>
                 </div>
 
-                <!-- GAME 4: LOVE COUPONS SCRATCH-OFF -->
+                <!-- GAME 4: LOVE COUPONS -->
                 <div id="game-view-coupons" class="game-container hidden space-y-4">
-                    <p class="text-xs text-gray-400 text-center">Klik atau sentuh kupon di bawah ini untuk mengklaim hadiah spesial dari Mores! 🎁</p>
+                    <p class="text-xs text-gray-400 text-center">Klik atau sentuh kupon di bawah ini untuk mengklaim hadiah mensive dari Mores! 🎁</p>
                     <div id="couponsGrid" class="grid grid-cols-2 gap-3">
                         <!-- Coupons generated via JS -->
                     </div>
                 </div>
             </section>
 
-            <!-- TAB 3: DIRECT MESSAGES (DM) SIMULATOR -->
+            <!-- TAB 3: DIRECT MESSAGES SIMULATOR -->
             <section id="tab-dm" class="tab-view hidden p-4 space-y-4">
                 <div class="glass-card rounded-2xl border border-gray-800 overflow-hidden flex flex-col h-[75vh]">
-                    <!-- DM Header -->
                     <div class="p-3.5 border-b border-gray-800 flex items-center justify-between bg-black/80">
                         <div class="flex items-center gap-3">
                             <div class="relative">
@@ -407,31 +385,28 @@
                                 <h3 class="text-xs font-bold text-white flex items-center gap-1">
                                     mores_mxlls <i class="fa-solid fa-circle-check text-blue-400 text-[10px]"></i>
                                 </h3>
-                                <p class="text-[10px] text-gray-400">Active now • Boyfriend Day Special</p>
+                                <p class="text-[10px] text-gray-400">Active now • 3rd Mensive Special</p>
                             </div>
                         </div>
                         <i class="fa-solid fa-circle-info text-gray-400 text-lg"></i>
                     </div>
 
-                    <!-- DM Message Scroll Area -->
                     <div id="dmScrollArea" class="flex-1 p-4 overflow-y-auto space-y-4 text-xs">
                         <div class="text-center my-2">
-                            <span class="text-[10px] bg-gray-800/80 text-gray-400 px-3 py-1 rounded-full">National Boyfriend Day • Today 00:01</span>
+                            <span class="text-[10px] bg-gray-800/80 text-gray-400 px-3 py-1 rounded-full">3rd Monthiversary • Today 00:01</span>
                         </div>
 
-                        <!-- Mores Message -->
                         <div class="flex items-end gap-2 max-w-[85%]">
                             <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" class="w-6 h-6 rounded-full object-cover">
                             <div class="bg-gradient-to-tr from-purple-900/60 to-pink-900/60 border border-pink-500/30 p-3.5 rounded-2xl rounded-bl-none text-gray-100 shadow-lg space-y-2">
-                                <p class="font-bold text-pink-300 text-sm">Happy National Boyfriend Day, Natachi! 💖✨</p>
-                                <p>Haloo Natachi sayang! Makasih banyak yaa udah selalu ada buat aku, sabar banget meladeni kelakuanku yang kadang random ini, dan selalu jadi sosok paling perhatian di hidupku! 🥰</p>
-                                <p>Di hari spesial ini, aku cuma mau ngingetin kalau kamu itu sangat berharga buat aku. Makasih udah bikin hari-hariku jadi jauh lebih berwarna.</p>
-                                <p class="font-semibold text-pink-200">I'm so lucky to have you as my boyfriend and bestie! Love you always! 🤍🌸</p>
+                                <p class="font-bold text-pink-300 text-sm">Happy 3rd Monthiversary, Natachi! 💖✨</p>
+                                <p>Gak kerasa yaa udah 3 bulan kita jalani hari-hari bareng. Makasih banyak udah selalu sabar, penuh perhatian, dan bikin hidup Mores jauh lebih berwarna setiap harinya! 🥰</p>
+                                <p>Di mensive ke-3 ini, aku berharap hubungan kita makin erat, makin saling mengerti, dan terus bahagia bareng-bareng.</p>
+                                <p class="font-semibold text-pink-200">Happy 3rd Mensive, Natachi sayang! Love you endlessly! 🤍🌸</p>
                                 <span class="text-[9px] text-pink-300/60 block text-right">00:01</span>
                             </div>
                         </div>
 
-                        <!-- Voice Note Bubble -->
                         <div class="flex items-end gap-2 max-w-[80%]">
                             <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" class="w-6 h-6 rounded-full object-cover">
                             <div class="bg-gray-800 border border-gray-700 p-3 rounded-2xl rounded-bl-none flex items-center gap-3 w-full">
@@ -452,12 +427,10 @@
                         </div>
                     </div>
 
-                    <!-- Typing Indicator simulation -->
                     <div id="dmTypingIndicator" class="px-4 py-1 text-[10px] text-gray-500 italic hidden">
                         Mores is typing...
                     </div>
 
-                    <!-- DM Input Bar -->
                     <div class="p-3 border-t border-gray-800 bg-black/80 flex items-center gap-2">
                         <input id="dmInput" type="text" placeholder="Balas pesan ke Mores..." class="flex-1 bg-gray-900 border border-gray-800 rounded-full px-4 py-2 text-xs text-white focus:outline-none focus:border-pink-500" onkeypress="handleDmKeyPress(event)">
                         <button onclick="sendDmMessage()" class="text-pink-500 font-bold text-xs px-3 py-2 hover:text-pink-400">Send</button>
@@ -465,15 +438,13 @@
                 </div>
             </section>
 
-            <!-- TAB 4: TIME CAPSULE & ROMANCE COUNTER -->
+            <!-- TAB 4: ROMANCE COUNTER -->
             <section id="tab-counter" class="tab-view hidden p-4 space-y-6">
-                <!-- Relationship Counter Banner -->
                 <div class="glass-card p-6 rounded-3xl text-center space-y-4 border border-pink-500/30 relative overflow-hidden">
                     <div class="absolute -top-10 -left-10 w-28 h-28 bg-pink-500/20 rounded-full blur-2xl"></div>
-                    <span class="text-xs font-bold text-pink-400 uppercase tracking-widest block">Time Spent Together ⏳</span>
+                    <span class="text-xs font-bold text-pink-400 uppercase tracking-widest block">3 Months & Counting ⏳</span>
                     <h2 class="text-xl font-bold text-white">Mores & Natachi</h2>
 
-                    <!-- Live Timer Digits -->
                     <div class="grid grid-cols-4 gap-2 pt-2">
                         <div class="bg-black/60 border border-white/10 p-2.5 rounded-2xl">
                             <span id="timerDays" class="text-xl font-extrabold text-pink-500 block">0</span>
@@ -492,10 +463,9 @@
                             <span class="text-[9px] text-gray-400 uppercase font-semibold">Secs</span>
                         </div>
                     </div>
-                    <p class="text-[11px] text-gray-400 italic">"And every second with you feels like magic ✨"</p>
+                    <p class="text-[11px] text-gray-400 italic">"3 bulan yang sangat indah bareng kamu ✨"</p>
                 </div>
 
-                <!-- Memory Photo Gallery Album Grid -->
                 <div class="space-y-3">
                     <h3 class="text-xs font-bold text-gray-300 uppercase tracking-wider">Memory Album 📸</h3>
                     <div class="grid grid-cols-3 gap-2">
@@ -554,7 +524,7 @@
                     <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" class="w-12 h-12 rounded-2xl object-cover border border-pink-500">
                     <div>
                         <h4 class="text-sm font-bold text-white">Perfect</h4>
-                        <p class="text-xs text-gray-400">Special Theme Song for Natachi 🎵</p>
+                        <p class="text-xs text-gray-400">Special Song for Natachi 🎵</p>
                     </div>
                 </div>
                 <button onclick="closeLyricsDrawer()" class="text-gray-400 hover:text-white text-xl">
@@ -562,7 +532,6 @@
                 </button>
             </div>
 
-            <!-- Song Lyrics Scroll Box -->
             <div class="flex-1 overflow-y-auto space-y-3 text-center text-xs text-gray-300 py-4 leading-relaxed font-serif italic">
                 <p class="text-pink-400 font-bold font-sans">"I found a love, for me..."</p>
                 <p>"Darling, just dive right in and follow my lead..."</p>
@@ -575,21 +544,16 @@
                 <p>"Barefoot on the grass, listening to our favourite song..."</p>
                 <p>"When you said you looked a mess, I whispered underneath my breath..."</p>
                 <p class="text-pink-300 font-semibold font-sans">"But you heard it, darling, you look perfect tonight..." 🤍</p>
-                <p class="text-xs text-gray-400 font-sans mt-2">For Natachi, forever and always ✨</p>
+                <p class="text-xs text-gray-400 font-sans mt-2">For Natachi, happy 3rd mensive ✨</p>
             </div>
         </div>
     </div>
 
-    <!-- FULLSCREEN INSTAGRAM STORY MODAL -->
+    <!-- FULLSCREEN STORY MODAL -->
     <div id="storyModal" class="fixed inset-0 z-50 bg-black hidden flex flex-col items-center justify-center">
         <div class="relative w-full max-w-md h-full bg-black flex flex-col justify-between overflow-hidden">
-            
-            <!-- Story Progress Bars Container -->
-            <div id="storyProgressBars" class="absolute top-3 left-0 right-0 z-20 px-3 flex gap-1">
-                <!-- Bars generated dynamically -->
-            </div>
+            <div id="storyProgressBars" class="absolute top-3 left-0 right-0 z-20 px-3 flex gap-1"></div>
 
-            <!-- Story Header -->
             <div class="absolute top-7 left-0 right-0 z-20 px-4 flex items-center justify-between">
                 <div class="flex items-center gap-2">
                     <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" class="w-8 h-8 rounded-full border border-pink-500 object-cover">
@@ -603,23 +567,18 @@
                 </button>
             </div>
 
-            <!-- Story Touch Navigation Zones -->
             <div class="absolute inset-0 z-10 flex">
                 <div onclick="prevStory()" class="w-1/3 h-full"></div>
                 <div onclick="nextStory()" class="w-2/3 h-full"></div>
             </div>
 
-            <!-- Story Main Image Display -->
             <div class="w-full h-full flex items-center justify-center relative">
                 <img id="storyModalImg" src="" class="w-full h-full object-cover">
-                
-                <!-- Floating Caption Glass Overlay -->
                 <div class="absolute bottom-20 left-4 right-4 z-20 glass-card p-4 rounded-2xl border border-white/20 shadow-xl">
                     <p id="storyModalCaption" class="text-xs font-medium text-white leading-relaxed text-center"></p>
                 </div>
             </div>
 
-            <!-- Story Footer Quick Reply Input -->
             <div class="absolute bottom-4 left-0 right-0 z-20 px-4 flex items-center gap-3">
                 <input type="text" placeholder="Send message to Mores..." class="flex-1 bg-white/10 border border-white/20 backdrop-blur-md rounded-full px-4 py-2.5 text-xs text-white placeholder-gray-300 focus:outline-none">
                 <button onclick="shootStoryHeart()" class="text-white text-xl hover:text-pink-500 transition-colors">
@@ -629,7 +588,7 @@
         </div>
     </div>
 
-    <!-- BOYFRIEND CERTIFICATE MODAL -->
+    <!-- CERTIFICATE MODAL -->
     <div id="certificateModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl hidden flex items-center justify-center p-4">
         <div class="glass-card max-w-sm w-full rounded-3xl p-6 text-center border-2 border-yellow-500/50 shadow-2xl space-y-4 relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-24 h-24 bg-yellow-500/20 rounded-full blur-2xl"></div>
@@ -637,20 +596,20 @@
             <i class="fa-solid fa-award text-5xl text-yellow-400 animate-bounce"></i>
             <div>
                 <span class="text-[10px] font-bold text-yellow-400 uppercase tracking-widest block">Official Award</span>
-                <h2 class="text-xl font-extrabold text-white">Best Boyfriend Certificate</h2>
+                <h2 class="text-xl font-extrabold text-white">3rd Mensive Special Award</h2>
             </div>
 
             <p class="text-xs text-gray-300 italic">"Sertifikat Penghargaan Resmi diberikan kepada:"</p>
             
             <div class="py-2 border-y border-yellow-500/30">
                 <h3 class="text-lg font-bold text-pink-400">NATACHI</h3>
-                <p class="text-[11px] text-gray-400">Sebagai Pacar Terbaik & Terfavorit Mores ✨</p>
+                <p class="text-[11px] text-gray-400">Pacar Terfavorit & Paling Bikin Mores Bahagia ✨</p>
             </div>
 
-            <p class="text-[10px] text-gray-400">Lulus Ujian Ketahanan Sabar, Perhatian, dan Kelucuan dengan Nilai 100/100 🏆</p>
+            <p class="text-[10px] text-gray-400">Berhasil melewati 3 Bulan Penuh Cinta, Kesabaran, dan Momen Manis Bersama 🏆</p>
 
             <button onclick="closeCertificateModal()" class="w-full bg-gradient-to-r from-yellow-500 to-pink-500 text-black font-bold py-2.5 rounded-full text-xs shadow-lg">
-                Klaim & Simpan Sertifikat 💕
+                Simpan Sertifikat Mensive 💕
             </button>
         </div>
     </div>
@@ -683,7 +642,6 @@
     </audio>
 
     <script>
-        /* WEB AUDIO API SOUND SYNTHESIZER */
         const SoundFX = {
             ctx: null,
             init() {
@@ -735,13 +693,13 @@
                     tagged: "madisonyv",
                     avatar: "foto1.jpg",
                     image: "foto1.jpg",
-                    likes: 1111,
+                    likes: 333,
                     isLiked: true,
-                    location: "In My Heart 💖 | Boyfriend Day",
-                    caption: "Happy National Boyfriend Day, Natachi! 💖 Terima kasih udah selalu jadi sosok paling hangat, sabar, dan pengertian. Bersamamu selalu terasa spesial! 🤍✨ #NationalBoyfriendDay #MyBoy",
+                    location: "In My Heart 💖 | 3rd Mensive",
+                    caption: "Happy 3rd Monthiversary Natachi! 💖 Terima kasih buat 3 bulan yang luar biasa indah ini. Tetap jadi alasan senyumku setiap hari yaa! 🤍✨ #3rdMensive #NatachiMores",
                     timeAgo: "2 hours ago",
                     comments: [
-                        { user: "madisonyv", text: "Makasih banyak sayanggg! 🥰 Love you so much!" }
+                        { user: "madisonyv", text: "Happy 3rd mensive jugaa sayanggg! 🥰 Love you!" }
                     ]
                 },
                 {
@@ -753,7 +711,7 @@
                     likes: 890,
                     isLiked: false,
                     location: "Our Safe Place ✨",
-                    caption: "Setiap momen bareng kamu selalu jadi favoritku. You are truly my safe place and my favorite person Natachi! 🌸💫",
+                    caption: "3 bulan yang penuh warna, cerita, dan tawa bareng Natachi. You are my favorite place to be! 🌸💫",
                     timeAgo: "4 hours ago",
                     comments: []
                 },
@@ -766,7 +724,7 @@
                     likes: 1024,
                     isLiked: true,
                     location: "Cozy Moments ☕",
-                    caption: "Terima kasih untuk semua perhatian kecil, kesabaran, dan tawa yang gak pernah berhenti kamu kasih setiap hari 🫶✨",
+                    caption: "Terima kasih untuk semua perhatian kecil dan kesabaran Natachi dalam meladeni Mores 🫶✨",
                     timeAgo: "6 hours ago",
                     comments: []
                 },
@@ -779,7 +737,7 @@
                     likes: 756,
                     isLiked: false,
                     location: "Laughing Together 😁",
-                    caption: "Gak cuma pacar terbaik, tapi kamu juga bestie paling asik diajak cerita dan bercanda kapan pun! 🌟",
+                    caption: "Gak terasa udah 3 bulan aja! Semoga ke depannya kita makin kompak dan bahagia terus 🌟",
                     timeAgo: "8 hours ago",
                     comments: []
                 },
@@ -792,7 +750,7 @@
                     likes: 932,
                     isLiked: true,
                     location: "Sweet Memories 🍯",
-                    caption: "Semoga hari-hari kita ke depan makin penuh tawa, kebahagiaan, dan kasih sayang yang gak pernah habis 🥰🤍",
+                    caption: "Semoga bulan-bulan berikutnya makin banyak momen manis yang bisa kita buat bareng 🥰🤍",
                     timeAgo: "12 hours ago",
                     comments: []
                 },
@@ -805,7 +763,7 @@
                     likes: 1200,
                     isLiked: true,
                     location: "Under The Same Sky 🌌",
-                    caption: "Dunia mungkin berisik, tapi pas sama kamu semuanya terasa begitu tenang dan indah 🌸✨",
+                    caption: "3 bulan yang berharga bareng orang paling spesial. Makasih udah hadir di hidupku 🌸✨",
                     timeAgo: "1 day ago",
                     comments: []
                 },
@@ -815,13 +773,13 @@
                     tagged: "madisonyv",
                     avatar: "foto1.jpg",
                     image: "foto7.jpg",
-                    likes: 2026,
+                    likes: 3007,
                     isLiked: true,
                     location: "Forever & Always 💖",
-                    caption: "I love you more than words can say, Natachi! Happy Boyfriend Day once again! 🥰 Forever my boy @madisonyv 🤍",
+                    caption: "I love you so much, Natachi! Happy 3rd Mensive once again! 🥰 Forever my best person @madisonyv 🤍",
                     timeAgo: "1 day ago",
                     comments: [
-                        { user: "madisonyv", text: "Forever and always with you sayang 🤍" }
+                        { user: "madisonyv", text: "Forever with you sayang 🤍" }
                     ]
                 }
             ]
@@ -901,13 +859,9 @@
         function switchTab(tabName) {
             APP_STATE.currentTab = tabName;
             
-            // Hide all views
             document.querySelectorAll('.tab-view').forEach(el => el.classList.add('hidden'));
-            
-            // Show target view
             document.getElementById(`tab-${tabName}`).classList.remove('hidden');
 
-            // Update Nav Buttons active state
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('text-pink-500');
                 btn.classList.add('text-gray-400');
@@ -1068,7 +1022,7 @@
             }
         }
 
-        /* GAME 1: MEMORY MATCH ENGINE */
+        /* GAME 1: MEMORY MATCH */
         const MEMORY_ITEMS = [
             { id: 1, img: 'foto1.jpg', text: 'My Favorite Smile 😁' },
             { id: 2, img: 'foto2.jpg', text: 'Best Date Ever ☕' },
@@ -1107,11 +1061,9 @@
 
                 cardEl.innerHTML = `
                     <div id="memoryCardInner-${idx}" class="w-full h-full relative transform-style-3d transition-transform duration-500 rounded-xl">
-                        <!-- Front Face (Hidden) -->
                         <div class="absolute inset-0 bg-gradient-to-tr from-gray-900 to-gray-800 border border-gray-700 rounded-xl flex items-center justify-center backface-hidden shadow-md">
                             <i class="fa-solid fa-heart text-pink-500 text-xl"></i>
                         </div>
-                        <!-- Back Face (Revealed) -->
                         <div class="absolute inset-0 rounded-xl overflow-hidden border-2 border-pink-500 rotate-y-180 backface-hidden">
                             <img src="${card.img}" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" class="w-full h-full object-cover">
                         </div>
@@ -1136,7 +1088,6 @@
 
                 const [c1, c2] = memoryState.flippedCards;
                 if (c1.card.id === c2.card.id) {
-                    // Match found!
                     SoundFX.playMatchSound();
                     c1.card.isMatched = true;
                     c2.card.isMatched = true;
@@ -1148,11 +1099,10 @@
                         setTimeout(() => {
                             SoundFX.playVictorySound();
                             confetti({ particleCount: 80, spread: 60 });
-                            alert('Horeee! Natachi berhasil mencocokkan semua foto kenangan kita! Mores makin sayang 💖');
+                            alert('Horeee! Natachi berhasil mencocokkan semua foto kenangan 3 bulan kita! Mores makin sayang 💖');
                         }, 400);
                     }
                 } else {
-                    // No match
                     setTimeout(() => {
                         c1.card.isFlipped = false;
                         c2.card.isFlipped = false;
@@ -1164,7 +1114,7 @@
             }
         }
 
-        /* GAME 2: LOVE CATCHER CANVAS GAME ENGINE */
+        /* GAME 2: LOVE CATCHER */
         let catcherGame = {
             active: false,
             score: 0,
@@ -1189,7 +1139,6 @@
             canvas.height = canvas.parentElement.clientHeight;
             catcherGame.basketX = canvas.width / 2 - 25;
 
-            // Setup Touch and Key Listeners
             document.getElementById('btnMoveLeft').onclick = () => moveBasket(-30);
             document.getElementById('btnMoveRight').onclick = () => moveBasket(30);
 
@@ -1209,7 +1158,6 @@
             const ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Spawn items
             if (Math.random() < 0.04) {
                 const type = Math.random() < 0.6 ? 'heart' : (Math.random() < 0.8 ? 'star' : 'bomb');
                 catcherGame.items.push({
@@ -1220,7 +1168,6 @@
                 });
             }
 
-            // Draw Basket (Natachi's Basket)
             ctx.fillStyle = '#E1306C';
             ctx.beginPath();
             ctx.roundRect(catcherGame.basketX, canvas.height - 30, 55, 18, 9);
@@ -1229,7 +1176,6 @@
             ctx.font = '10px sans-serif';
             ctx.fillText('NATACHI', catcherGame.basketX + 6, canvas.height - 18);
 
-            // Update & Draw Items
             for (let i = catcherGame.items.length - 1; i >= 0; i--) {
                 const item = catcherGame.items[i];
                 item.y += item.speed;
@@ -1238,7 +1184,6 @@
                 const icon = item.type === 'heart' ? '💖' : (item.type === 'star' ? '⭐' : '💣');
                 ctx.fillText(icon, item.x, item.y);
 
-                // Collision detection
                 if (item.y >= canvas.height - 35 && item.y <= canvas.height - 10 &&
                     item.x >= catcherGame.basketX - 15 && item.x <= catcherGame.basketX + 50) {
                     
@@ -1284,16 +1229,16 @@
             overlay.classList.remove('hidden');
         }
 
-        /* GAME 3: TRIVIA QUIZ ENGINE */
+        /* GAME 3: TRIVIA QUIZ */
         const QUIZ_QUESTIONS = [
             {
-                q: "1. Siapa pacar Paling Gemes & Ganteng yang bikin website ini?",
-                options: ["Mores 💕", "Mores Pacar Natachi", "Mores Sayang", "Semua Jawaban Benar! 😍"],
-                correct: 3
+                q: "1. Hari ini kita lagi merayakan apa?",
+                options: ["3rd Monthiversary 🎉", "Boyfriend Day", "Hari Valentine", "Ulang Tahun Mores"],
+                correct: 0
             },
             {
-                q: "2. Makanan / minuman favorit Mores pas ngedate sama Natachi?",
-                options: ["Boba & Dimsum", "Seblak Level 10", "Kopi Susu", "Apa aja asal sama Natachi ☕"],
+                q: "2. Siapa pacar paling gemes dan paling sayang Natachi?",
+                options: ["Mores 💕", "Mores Pacar Natachi", "Mores Sayang", "Semua Jawaban Benar! 😍"],
                 correct: 3
             },
             {
@@ -1302,13 +1247,13 @@
                 correct: 0
             },
             {
-                q: "4. Apa hal yang paling bikin Mores bahagia bersamamu?",
+                q: "4. Apa hal yang paling bikin Mores bahagia selama 3 bulan ini?",
                 options: ["Perhatian tulus Natachi", "Senyum manis Natachi", "Sabar meladeni Mores", "Semua Hal tentang Natachi! ✨"],
                 correct: 3
             },
             {
-                q: "5. Apa harapan Mores di Boyfriend Day kali ini?",
-                options: ["Natachi sehat & sukses", "Kita makin langgeng", "Makin sayang selamanya", "Semuanya & Bareng Terus! 💖"],
+                q: "5. Harapan Mores untuk hubungan kita ke depannya?",
+                options: ["Makin langgeng", "Makin sayang", "Makin bahagia bareng", "Semua Jawaban Benar! 💖"],
                 correct: 3
             }
         ];
@@ -1352,7 +1297,6 @@
             if (quizState.currentStep < QUIZ_QUESTIONS.length) {
                 renderQuizStep();
             } else {
-                // Quiz Finish
                 document.getElementById('certificateModal').classList.remove('hidden');
                 confetti({ particleCount: 100, spread: 80 });
             }
@@ -1363,10 +1307,10 @@
             initQuizGame();
         }
 
-        /* GAME 4: LOVE COUPONS ENGINE */
+        /* GAME 4: LOVE COUPONS */
         const COUPONS = [
-            { id: 1, title: '🎟️ Dinner & Date Option', desc: 'Bebas pilih tempat ngedate & Mores ikut aja!', claimed: false },
-            { id: 2, title: '🎟️ Unlimited Hugs & Kisses', desc: 'Berlaku kapan pun tanpa batas!', claimed: false },
+            { id: 1, title: '🎟️ Dinner & Date Option', desc: 'Bebas pilih tempat ngedate mensive & Mores ikut aja!', claimed: false },
+            { id: 2, title: '🎟️ Unlimited Hugs & Kisses', desc: 'Spesial 3rd Mensive, bebas minta peluk kapan aja!', claimed: false },
             { id: 3, title: '🎟️ Maafkan Ngambek Random', desc: 'Kartu bebas salah 1x pas Mores ngambek!', claimed: false },
             { id: 4, title: '🎟️ Late Night Call / Game', desc: 'Begadang ditemenin Mores sepuasnya!', claimed: false }
         ];
@@ -1499,7 +1443,6 @@
                 input.value = '';
                 area.scrollTop = area.scrollHeight;
 
-                // Mores Auto Reply Simulation
                 setTimeout(() => {
                     document.getElementById('dmTypingIndicator').classList.remove('hidden');
                 }, 1000);
@@ -1511,7 +1454,7 @@
                     reply.innerHTML = `
                         <img src="foto1.jpg" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=300&q=80'" class="w-6 h-6 rounded-full object-cover">
                         <div class="bg-gray-800 text-gray-100 p-3 rounded-2xl rounded-bl-none text-xs shadow-lg">
-                            <p>Makasih pesan manisnya Natachi sayang! I love you so much!! 💕</p>
+                            <p>Makasih pesan mensive manisnya Natachi sayang! I love you so much!! 💕</p>
                             <span class="text-[8px] opacity-60 block text-right mt-1">Just now</span>
                         </div>
                     `;
@@ -1567,7 +1510,6 @@
         }
 
         function startRelationshipCounter() {
-            // Tanggal Jadian: 07 Juli 2026
             const startDate = new Date('2026-07-07T00:00:00');
 
             function updateCounter() {
